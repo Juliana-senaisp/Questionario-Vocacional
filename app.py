@@ -2,6 +2,7 @@ from flask import Flask, render_template, request, redirect, url_for
 
 app = Flask(__name__, template_folder='.')
 
+
 def calcular_resultado(respostas):
     # Contar o número de ocorrências de cada resposta
     contagem = {
@@ -40,6 +41,8 @@ def resultado():
     for i in range(1, 11):
         resposta = request.form.get(f'pergunta{i}')
         respostas.append(resposta)
+    
+    print(respostas)  # Adicione isto para verificar as respostas no console
     resultado_final = calcular_resultado(respostas)
     return render_template('resultado.html', resultado=resultado_final)
 
