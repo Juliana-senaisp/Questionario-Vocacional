@@ -9,9 +9,42 @@
 <body>
     <div class="container">
         <h1>Resultado do Quiz</h1>
-        <!-- Aqui o resultado é exibido -->
-        <p>{{ resultado }}</p>
+        <p id="resultado">Seu resultado será exibido aqui...</p>
         <a href="index.html" class="start-btn">Voltar ao Início</a>
     </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const queryString = window.location.search;
+            const urlParams = new URLSearchParams(queryString);
+
+            // Simples lógica para calcular o resultado com base nas respostas
+            let totalA = 0, totalB = 0, totalC = 0, totalD = 0, totalE = 0;
+
+            for (let i = 1; i <= 10; i++) {
+                const answer = urlParams.get(`pergunta${i}`);
+                if (answer === 'a') totalA++;
+                if (answer === 'b') totalB++;
+                if (answer === 'c') totalC++;
+                if (answer === 'd') totalD++;
+                if (answer === 'e') totalE++;
+            }
+
+            let resultado = '';
+            if (totalA >= totalB && totalA >= totalC && totalA >= totalD && totalA >= totalE) {
+                resultado = 'Você se interessa por logística';
+            } else if (totalB > totalA && totalB >= totalC && totalB >= totalD && totalB >= totalE) {
+                resultado = 'Você gosta de elétrica';
+            } else if (totalC >= totalA && totalC >= totalB && totalC >= totalD && totalC >= totalE) {
+                resultado = 'Você gosta de desenvolvimento de sistemas';
+            } else if (totalD >= totalA && totalD >= totalB && totalD >= totalC && totalD >= totalE) {
+                resultado = 'Você gosta de mecânica';
+            } else if (totalE >= totalA && totalE >= totalB && totalE >= totalC && totalE >= totalD) {
+                resultado = 'Você gosta de desenvolvimento de sistemas';
+            }
+
+            document.getElementById('resultado').textContent = resultado;
+        });
+    </script>
 </body>
 </html>
