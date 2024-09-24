@@ -1,10 +1,10 @@
 from flask import Flask, render_template, request, redirect, url_for
 
+# Aqui indicamos que os templates por padrão estão na pasta atual
 app = Flask(__name__, template_folder='.')
 
-
 def calcular_resultado(respostas):
-    # Contar o número de ocorrências de cada resposta
+    # Lógica para calcular o resultado baseado nas respostas
     contagem = {
         'a': respostas.count('a'),
         'b': respostas.count('b'),
@@ -13,7 +13,6 @@ def calcular_resultado(respostas):
         'e': respostas.count('e')
     }
 
-    # Lógica para determinar o resultado final
     if contagem['a'] > max(contagem['b'], contagem['c'], contagem['d'], contagem['e']):
         return "Você se interessa por logística"
     elif contagem['b'] > max(contagem['a'], contagem['c'], contagem['d'], contagem['e']):
@@ -29,11 +28,11 @@ def calcular_resultado(respostas):
 
 @app.route('/')
 def index():
-    return render_template('index.html')
+    return render_template('index.html')  # Mantém o index.html na mesma pasta que app.py
 
 @app.route('/quiz')
 def quiz():
-    return render_template('quiz.html')
+    return render_template('quiz.html')  # Mantém o quiz.html na mesma pasta que app.py
 
 @app.route('/resultado', methods=['POST'])
 def resultado():
@@ -42,8 +41,9 @@ def resultado():
         resposta = request.form.get(f'pergunta{i}')
         respostas.append(resposta)
     
-    print(respostas)  # Adicione isto para verificar as respostas no console
     resultado_final = calcular_resultado(respostas)
+
+    # Aqui buscamos o resultado.html na pasta templates
     return render_template('resultado.html', resultado=resultado_final)
 
 @app.route('/restart')
