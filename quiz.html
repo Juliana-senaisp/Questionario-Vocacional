@@ -4,12 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Quiz de Interesses</title>
-    <link rel="stylesheet" href="/static/style.css">
+    <link rel="stylesheet" href="style.css">
     <style>
-        /* Estilo dos cards de perguntas */
         @font-face {
             font-family: "mont";
-            src: url(../Font/Montserrat-VariableFont_wght.ttf);
+            src: url(Montserrat-VariableFont_wght.ttf);
         }
         * {
             font-family: "mont", sans-serif;
@@ -54,25 +53,22 @@
             
         label {
             font-size: 20px;
-            
         }
         input {
             margin: 10px 0;
         }
-        
-
     </style>
 </head>
 <body>
     <div class="container">
         <h1>Teste Vocacional - SENAI Suzano</h1>
-        <form id="quizForm" action="/resultado" method="POST">
+        <form id="quizForm" action="resultado.html" method="GET">
             <!-- Pergunta 1 -->
             <div class="question-card active" id="pergunta1">
                 <label class="label" for="pergunta1">1. Qual dessas atividades você se sente mais confortável realizando?</label><br>
-                <input type="radio" name="pergunta1" value="a" required> <label for=""> Planejar e organizar tarefas do dia a dia.</label><br>
+                <input type="radio" name="pergunta1" value="a" required> <label> Planejar e organizar tarefas do dia a dia.</label><br>
                 <input type="radio" name="pergunta1" value="b"><label> Resolver problemas técnicos ou manuais.<br>
-                <input type="radio" name="pergunta1" value="c"><label>  Lidar com números e dados.<br>
+                <input type="radio" name="pergunta1" value="c"><label> Lidar com números e dados.<br>
                 <input type="radio" name="pergunta1" value="d"><label> Entender o funcionamento de objetos e como eles podem ser melhorados.<br>
                 <input type="radio" name="pergunta1" value="e"><label> Criar ou construir soluções a partir de ideias.<br>
                 <button type="button" class="next-btn" disabled>Avançar</button>
@@ -167,13 +163,14 @@
             </div>
 
             <!-- Pergunta 10 -->
+            <!-- Pergunta 10 -->
             <div class="question-card" id="pergunta10">
                 <label class="label" for="pergunta10">10. Quando se trata de aprender algo novo, o que mais te motiva?</label><br>
-                <input type="radio" name="pergunta10" value="a" required><label> a) Saber que posso melhorar a forma como tarefas e processos são organizados.</label><br>
-                <input type="radio" name="pergunta10" value="b"><label> b) Poder resolver problemas reais com soluções práticas.</label><br>
-                <input type="radio" name="pergunta10" value="c"><label> c) Entender como sistemas ou informações estão interligados e afetam uns aos outros.</label><br>
-                <input type="radio" name="pergunta10" value="d"><label> d) Explorar como as coisas funcionam internamente e como podem ser ajustadas.</label><br>
-                <input type="radio" name="pergunta10" value="e"><label> e) A chance de inovar e criar algo novo, aplicando minhas ideias de forma prática.</label><br>
+                <input type="radio" name="pergunta10" value="a" required><label> Saber que posso melhorar a forma como tarefas e processos são organizados.</label><br>
+                <input type="radio" name="pergunta10" value="b"><label> Poder resolver problemas reais com soluções práticas.</label><br>
+                <input type="radio" name="pergunta10" value="c"><label> Entender como sistemas ou informações estão interligados e afetam uns aos outros.</label><br>
+                <input type="radio" name="pergunta10" value="d"><label> Explorar como as coisas funcionam internamente e como podem ser ajustadas.</label><br>
+                <input type="radio" name="pergunta10" value="e"><label> A chance de inovar e criar algo novo, aplicando minhas ideias de forma prática.</label><br>
                 <button type="submit" class="submit-btn">Ver Resultado</button>
             </div>
         </form>
@@ -184,7 +181,6 @@
             const cards = document.querySelectorAll(".question-card");
             let currentCardIndex = 0;
 
-            // Função para ativar o botão de avançar quando uma opção for selecionada
             function enableNextButton(card) {
                 const nextButton = card.querySelector(".next-btn");
                 const radios = card.querySelectorAll("input[type='radio']");
@@ -196,7 +192,6 @@
                 });
             }
 
-            // Função para avançar para a próxima pergunta
             function showNextCard() {
                 if (currentCardIndex < cards.length - 1) {
                     cards[currentCardIndex].classList.remove("active");
@@ -205,7 +200,6 @@
                 }
             }
 
-            // Adicionar funcionalidade de avançar em todos os cartões
             cards.forEach(card => {
                 const nextButton = card.querySelector(".next-btn");
                 if (nextButton) {

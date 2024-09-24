@@ -14,15 +14,15 @@ def mostrar_resultado(respostas):
 
     # Definir o resultado com base nas contagens
     if contagem['a'] > max(contagem['b'], contagem['c'], contagem['d'], contagem['e']):
-        return "Você pode se interessar por áreas relacionadas à gestão e organização. Seu curso é: Logística"
+        return "Você se interessa por logística"
     elif contagem['b'] > max(contagem['a'], contagem['c'], contagem['d'], contagem['e']):
-        return "Seu resultado indica aptidão para tarefas técnicas e manuais. Seu curso é: Elétrica ou Eletrôeletronica."
+        return "Você gosta de elétrica"
     elif contagem['c'] >= max(contagem['a'], contagem['b'], contagem['d'], contagem['e']):
-        return "Mostra interesse em análise, sistematização e design. Seu curso é: Desenvolvimento de Sistemas."
+        return "Você gosta de desenvolvimento de sistemas"
     elif contagem['e'] >= max(contagem['a'], contagem['b'], contagem['d'], contagem['c']):
-        return "Mostra interesse em análise, sistematização e design. Seu curso é: Desenvolvimento de Sistemas."
+        return "Você gosta de desenvolvimento de sistemas"
     elif contagem['d'] > max(contagem['a'], contagem['b'], contagem['c'], contagem['e']):
-        return "Seu resultado Reflete um gosto por mecânica e funcionamento de objetos. Seu curso é: Mecânica."
+        return "Você gosta de mecânica"
     else:
         return "Empate entre as opções. Tente responder novamente."
 
