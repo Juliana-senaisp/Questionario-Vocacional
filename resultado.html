@@ -32,15 +32,15 @@
 
             let resultado = '';
             if (totalA >= totalB && totalA >= totalC && totalA >= totalD && totalA >= totalE) {
-                resultado = 'Você se interessa por logística';
+                resultado = 'Você pode se interessar por áreas relacionadas à gestão e organização. Seu curso é: Logística';
             } else if (totalB > totalA && totalB >= totalC && totalB >= totalD && totalB >= totalE) {
-                resultado = 'Você gosta de elétrica';
+                resultado = 'Seu resultado indica aptidão para tarefas técnicas e manuais. Seu curso é: Elétrica ou Eletrôeletronica.';
             } else if (totalC >= totalA && totalC >= totalB && totalC >= totalD && totalC >= totalE) {
-                resultado = 'Você gosta de desenvolvimento de sistemas';
+                resultado = 'Mostra interesse em análise, sistematização e design. Seu curso é: Desenvolvimento de Sistemas.';
             } else if (totalD >= totalA && totalD >= totalB && totalD >= totalC && totalD >= totalE) {
-                resultado = 'Você gosta de mecânica';
+                resultado = 'Seu resultado Reflete um gosto por mecânica e funcionamento de objetos. Seu curso é: Mecânica.';
             } else if (totalE >= totalA && totalE >= totalB && totalE >= totalC && totalE >= totalD) {
-                resultado = 'Você gosta de desenvolvimento de sistemas';
+                resultado = 'Mostra interesse em análise, sistematização e design. Seu curso é: Desenvolvimento de Sistemas.';
             }
 
             document.getElementById('resultado').textContent = resultado;

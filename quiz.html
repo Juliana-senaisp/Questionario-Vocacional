@@ -38,7 +38,8 @@
             padding: 10px 20px;
             border: none;
             cursor: pointer;
-            border-radius: 7px;
+            border-bottom-left-radius: 7px;
+            border-bottom-right-radius: 7px;
             margin-top: 20px;
         }
 
@@ -55,123 +56,131 @@
             font-size: 20px;
         }
         input {
-            margin: 10px 0;
+            margin: 10px 8px 10px 0;
+        }
+        .linha {
+            height: 5px;
+            max-width: 600px;
+            background-color: red;
+            border-top-left-radius: 7px;
+            border-top-right-radius: 7px;
         }
     </style>
 </head>
 <body>
     <div class="container">
         <h1>Teste Vocacional - SENAI Suzano</h1>
+        <div class="linha"></div>
         <form id="quizForm" action="resultado.html" method="GET">
 
             <!-- Pergunta 1 -->
             <div class="question-card active" id="pergunta1">
-                <label class="label" for="pergunta1">1. Qual dessas atividades você se sente mais confortável realizando?</label><br>
-                <input type="radio" name="pergunta1" value="a" required> <label> Planejar e organizar tarefas do dia a dia.</label><br>
-                <input type="radio" name="pergunta1" value="b"><label> Resolver problemas técnicos ou manuais.<br>
-                <input type="radio" name="pergunta1" value="c"><label> Lidar com números e dados.<br>
-                <input type="radio" name="pergunta1" value="d"><label> Entender o funcionamento de objetos e como eles podem ser melhorados.<br>
-                <input type="radio" name="pergunta1" value="e"><label> Criar ou construir soluções a partir de ideias.<br>
+                <label class="label" for="pergunta1">Qual dessas atividades você se sente mais confortável realizando?</label><br>
+                <input type="radio" name="pergunta1" value="a" required><label>Planejar e organizar tarefas do dia a dia.</label><br>
+                <input type="radio" name="pergunta1" value="b"><label>Resolver problemas técnicos ou manuais.<br>
+                <input type="radio" name="pergunta1" value="c"><label>Lidar com números e dados.<br>
+                <input type="radio" name="pergunta1" value="d"><label>Entender o funcionamento de objetos e como eles podem ser melhorados.<br>
+                <input type="radio" name="pergunta1" value="e"><label>Criar ou construir soluções a partir de ideias.<br>
                 <button type="button" class="next-btn" disabled>Avançar</button>
             </div>
 
             <!-- Pergunta 2 -->
             <div class="question-card" id="pergunta2">
-                <label class="label" for="pergunta2">2. Em qual dessas áreas você se sente mais curioso em aprender?</label><br>
-                <input type="radio" name="pergunta2" value="a" required><label> a) Como diferentes setores se conectam para o sucesso de um projeto.</label><br>
-                <input type="radio" name="pergunta2" value="b"><label> b) Como identificar e solucionar problemas práticos.</label><br>
-                <input type="radio" name="pergunta2" value="c"><label> c) Como estruturas e sistemas funcionam.</label><br>
-                <input type="radio" name="pergunta2" value="d"><label> d) Como objetos e ferramentas são projetados e consertados.</label><br>
-                <input type="radio" name="pergunta2" value="e"><label> e) Como ideias abstratas podem se transformar em produtos funcionais.</label><br>
+                <label class="label" for="pergunta2">Em qual dessas áreas você se sente mais curioso em aprender?</label><br>
+                <input type="radio" name="pergunta2" value="a" required><label>Como diferentes setores se conectam para o sucesso de um projeto.</label><br>
+                <input type="radio" name="pergunta2" value="b"><label>Como identificar e solucionar problemas práticos.</label><br>
+                <input type="radio" name="pergunta2" value="c"><label>Como estruturas e sistemas funcionam.</label><br>
+                <input type="radio" name="pergunta2" value="d"><label>Como objetos e ferramentas são projetados e consertados.</label><br>
+                <input type="radio" name="pergunta2" value="e"><label>Como ideias abstratas podem se transformar em produtos funcionais.</label><br>
                 <button type="button" class="next-btn" disabled>Avançar</button>
             </div>
 
             <!-- Pergunta 3 -->
             <div class="question-card" id="pergunta3">
-                <label class="label" for="pergunta3">3. Qual dessas habilidades você acha que já tem, ou que pode desenvolver com mais facilidade?</label><br>
-                <input type="radio" name="pergunta3" value="a" required><label> a) Organizar e planejar projetos ou tarefas com eficiência.</label><br>
-                <input type="radio" name="pergunta3" value="b"><label> b) Trabalhar com detalhes técnicos e manuais.</label><br>
-                <input type="radio" name="pergunta3" value="c"><label> c) Entender como diferentes partes de um sistema se conectam.</label><br>
-                <input type="radio" name="pergunta3" value="d"><label> d) Consertar ou ajustar objetos para que funcionem melhor.</label><br>
-                <input type="radio" name="pergunta3" value="e"><label> e) Pensar de maneira criativa para resolver problemas complexos.</label><br>
+                <label class="label" for="pergunta3">Qual dessas habilidades você acha que já tem, ou que pode desenvolver com mais facilidade?</label><br>
+                <input type="radio" name="pergunta3" value="a" required><label>Organizar e planejar projetos ou tarefas com eficiência.</label><br>
+                <input type="radio" name="pergunta3" value="b"><label>Trabalhar com detalhes técnicos e manuais.</label><br>
+                <input type="radio" name="pergunta3" value="c"><label>Entender como diferentes partes de um sistema se conectam.</label><br>
+                <input type="radio" name="pergunta3" value="d"><label>Consertar ou ajustar objetos para que funcionem melhor.</label><br>
+                <input type="radio" name="pergunta3" value="e"><label>Pensar de maneira criativa para resolver problemas complexos.</label><br>
                 <button type="button" class="next-btn" disabled>Avançar</button>
             </div>
 
             <!-- Pergunta 4 -->
             <div class="question-card" id="pergunta4">
-                <label class="label" for="pergunta4">4. Quando você precisa resolver um problema, qual abordagem você prefere?</label><br>
-                <input type="radio" name="pergunta4" value="a" required><label> a) Planejar o que será feito antes de começar.</label><br>
-                <input type="radio" name="pergunta4" value="b"><label> b) Colocar a mão na massa e ir ajustando conforme necessário.</label><br>
-                <input type="radio" name="pergunta4" value="c"><label> c) Analisar todos os dados e informações antes de tomar uma decisão.</label><br>
-                <input type="radio" name="pergunta4" value="d"><label> d) Entender o problema a fundo para encontrar a causa e uma solução prática.</label><br>
-                <input type="radio" name="pergunta4" value="e"><label> e) Experimentar diferentes soluções até encontrar a mais eficiente.</label><br>
+                <label class="label" for="pergunta4">Quando você precisa resolver um problema, qual abordagem você prefere?</label><br>
+                <input type="radio" name="pergunta4" value="a" required><label>Planejar o que será feito antes de começar.</label><br>
+                <input type="radio" name="pergunta4" value="b"><label>Colocar a mão na massa e ir ajustando conforme necessário.</label><br>
+                <input type="radio" name="pergunta4" value="c"><label>Analisar todos os dados e informações antes de tomar uma decisão.</label><br>
+                <input type="radio" name="pergunta4" value="d"><label>Entender o problema a fundo para encontrar a causa e uma solução prática.</label><br>
+                <input type="radio" name="pergunta4" value="e"><label>Experimentar diferentes soluções até encontrar a mais eficiente.</label><br>
                 <button type="button" class="next-btn" disabled>Avançar</button>
             </div>
 
             <!-- Pergunta 5 -->
             <div class="question-card" id="pergunta5">
-                <label class="label" for="pergunta5">5. Em qual tipo de ambiente você se sente mais confortável trabalhando?</label><br>
-                <input type="radio" name="pergunta5" value="a" required><label> a) Em um ambiente onde você organiza e monitora diferentes atividades.</label><br>
-                <input type="radio" name="pergunta5" value="b"><label> b) Em locais onde você possa estar sempre em movimento, resolvendo problemas práticos.</label><br>
-                <input type="radio" name="pergunta5" value="c"><label> c) Em lugares que envolvem o trabalho com números, informações e tecnologia.</label><br>
-                <input type="radio" name="pergunta5" value="d"><label> d) Em oficinas ou fábricas, onde você possa interagir diretamente com máquinas ou ferramentas.<br>
-                <input type="radio" name="pergunta5" value="e"><label> e) Em um ambiente criativo, onde possa desenvolver e testar novas ideias.</label><br>
+                <label class="label" for="pergunta5">Em qual tipo de ambiente você se sente mais confortável trabalhando?</label><br>
+                <input type="radio" name="pergunta5" value="a" required><label>Em um ambiente onde você organiza e monitora diferentes atividades.</label><br>
+                <input type="radio" name="pergunta5" value="b"><label>Em locais onde você possa estar sempre em movimento, resolvendo problemas práticos.</label><br>
+                <input type="radio" name="pergunta5" value="c"><label>Em lugares que envolvem o trabalho com números, informações e tecnologia.</label><br>
+                <input type="radio" name="pergunta5" value="d"><label>Em oficinas ou fábricas, onde você possa interagir diretamente com máquinas ou ferramentas.<br>
+                <input type="radio" name="pergunta5" value="e"><label>Em um ambiente criativo, onde possa desenvolver e testar novas ideias.</label><br>
                 <button type="button" class="next-btn" disabled>Avançar</button>
             </div>
 
             <!-- Pergunta 6 -->
             <div class="question-card" id="pergunta6">
-                <label class="label" for="pergunta6">6. Como você prefere se envolver em projetos ou tarefas?</label><br>
-                <input type="radio" name="pergunta6" value="a" required><label> a) Liderando e coordenando as ações.</label><br>
-                <input type="radio" name="pergunta6" value="b"><label> b) Resolvendo desafios técnicos e práticos.</label><br>
-                <input type="radio" name="pergunta6" value="c"><label> c) Analisando dados e informações para garantir que tudo funcione bem.</label><br>
-                <input type="radio" name="pergunta6" value="d"><label> d) Desmontando e ajustando objetos para entender como eles funcionam.</label><br>
-                <input type="radio" name="pergunta6" value="e"><label> e) Criando soluções novas e inovadoras a partir de ideias.</label><br>
+                <label class="label" for="pergunta6">Como você prefere se envolver em projetos ou tarefas?</label><br>
+                <input type="radio" name="pergunta6" value="a" required><label>Liderando e coordenando as ações.</label><br>
+                <input type="radio" name="pergunta6" value="b"><label>Resolvendo desafios técnicos e práticos.</label><br>
+                <input type="radio" name="pergunta6" value="c"><label>Analisando dados e informações para garantir que tudo funcione bem.</label><br>
+                <input type="radio" name="pergunta6" value="d"><label>Desmontando e ajustando objetos para entender como eles funcionam.</label><br>
+                <input type="radio" name="pergunta6" value="e"><label>Criando soluções novas e inovadoras a partir de ideias.</label><br>
                 <button type="button" class="next-btn" disabled>Avançar</button>
             </div>
 
             <!-- Pergunta 7 -->
             <div class="question-card" id="pergunta7">
-                <label class="label" for="pergunta7">7. Quando você encontra um problema, qual é sua primeira reação?</label><br>
-                <input type="radio" name="pergunta7" value="a" required><label> a) Planejar uma estratégia para resolver o problema da melhor forma possível.</label><br>
-                <input type="radio" name="pergunta7" value="b"><label> b) Tentar resolver o problema por conta própria, experimentando soluções.</label><br>
-                <input type="radio" name="pergunta7" value="c"><label> c) Analisar todos os dados disponíveis para entender a origem do problema.</label><br>
-                <input type="radio" name="pergunta7" value="d"><label> d) Ver como o problema afeta o funcionamento do todo e identificar a melhor maneira de corrigi-lo.</label><br>
-                <input type="radio" name="pergunta7" value="e"><label> e) Testar diferentes abordagens até encontrar uma solução que funcione.</label><br>
+                <label class="label" for="pergunta7">Quando você encontra um problema, qual é sua primeira reação?</label><br>
+                <input type="radio" name="pergunta7" value="a" required><label>Planejar uma estratégia para resolver o problema da melhor forma possível.</label><br>
+                <input type="radio" name="pergunta7" value="b"><label>Tentar resolver o problema por conta própria, experimentando soluções.</label><br>
+                <input type="radio" name="pergunta7" value="c"><label>Analisar todos os dados disponíveis para entender a origem do problema.</label><br>
+                <input type="radio" name="pergunta7" value="d"><label>Ver como o problema afeta o funcionamento do todo e identificar a melhor maneira de corrigi-lo.</label><br>
+                <input type="radio" name="pergunta7" value="e"><label>Testar diferentes abordagens até encontrar uma solução que funcione.</label><br>
                 <button type="button" class="next-btn" disabled>Avançar</button>
             </div>
 
             <!-- Pergunta 8 -->
             <div class="question-card" id="pergunta8">
-                <label for="pergunta8">8. O que mais te atrai em um desafio?</label><br>
-                <input type="radio" name="pergunta8" value="a" required><label> a) A possibilidade de planejar e organizar as etapas necessárias para superá-lo.</label></label><br>
-                <input type="radio" name="pergunta8" value="b"><label> b) A oportunidade de resolver um problema técnico ou prático.</label></label><br>
-                <input type="radio" name="pergunta8" value="c"><label> c) A chance de analisar e interpretar informações para tomar decisões.</label></label><br>
-                <input type="radio" name="pergunta8" value="d"><label> d) A ideia de desmontar e ajustar algo até que ele funcione perfeitamente.</label></label><br>
-                <input type="radio" name="pergunta8" value="e"><label> e) A oportunidade de criar uma solução inovadora e criativa.</label></label><br>
+                <label for="pergunta8">O que mais te atrai em um desafio?</label><br>
+                <input type="radio" name="pergunta8" value="a" required><label>A possibilidade de planejar e organizar as etapas necessárias para superá-lo.</label></label><br>
+                <input type="radio" name="pergunta8" value="b"><label>A oportunidade de resolver um problema técnico ou prático.</label></label><br>
+                <input type="radio" name="pergunta8" value="c"><label>A chance de analisar e interpretar informações para tomar decisões.</label></label><br>
+                <input type="radio" name="pergunta8" value="d"><label>A ideia de desmontar e ajustar algo até que ele funcione perfeitamente.</label></label><br>
+                <input type="radio" name="pergunta8" value="e"><label>A oportunidade de criar uma solução inovadora e criativa.</label></label><br>
                 <button type="button" class="next-btn" disabled>Avançar</button>
             </div>
 
             <!-- Pergunta 9 -->
             <div class="question-card" id="pergunta9">
-                <label class="label" for="pergunta9">9. Qual dessas habilidades você se sente mais capaz de desenvolver ou já tem facilidade?</label><br>
-                <input type="radio" name="pergunta9" value="a" required><label> a) Organizar e planejar atividades de forma eficiente.</label><br>
-                <input type="radio" name="pergunta9" value="b"><label> b) Trabalhar com questões práticas e técnicas, resolvendo problemas.</label><br>
-                <input type="radio" name="pergunta9" value="c"><label> c) Lidar com dados e entender como diferentes sistemas se conectam.</label><br>
-                <input type="radio" name="pergunta9" value="d"><label> d) Entender o funcionamento de objetos e máquinas, ajustando-os quando necessário.</label><br>
-                <input type="radio" name="pergunta9" value="e"><label> e) Criar soluções para problemas usando pensamento criativo e inovador.</label><br>
+                <label class="label" for="pergunta9">Qual dessas habilidades você se sente mais capaz de desenvolver ou já tem facilidade?</label><br>
+                <input type="radio" name="pergunta9" value="a" required><label>Organizar e planejar atividades de forma eficiente.</label><br>
+                <input type="radio" name="pergunta9" value="b"><label>Trabalhar com questões práticas e técnicas, resolvendo problemas.</label><br>
+                <input type="radio" name="pergunta9" value="c"><label>Lidar com dados e entender como diferentes sistemas se conectam.</label><br>
+                <input type="radio" name="pergunta9" value="d"><label>Entender o funcionamento de objetos e máquinas, ajustando-os quando necessário.</label><br>
+                <input type="radio" name="pergunta9" value="e"><label>Criar soluções para problemas usando pensamento criativo e inovador.</label><br>
                 <button type="button" class="next-btn" disabled>Avançar</button>
             </div>
 
             <!-- Pergunta 10 -->
             <!-- Pergunta 10 -->
             <div class="question-card" id="pergunta10">
-                <label class="label" for="pergunta10">10. Quando se trata de aprender algo novo, o que mais te motiva?</label><br>
-                <input type="radio" name="pergunta10" value="a" required><label> Saber que posso melhorar a forma como tarefas e processos são organizados.</label><br>
-                <input type="radio" name="pergunta10" value="b"><label> Poder resolver problemas reais com soluções práticas.</label><br>
-                <input type="radio" name="pergunta10" value="c"><label> Entender como sistemas ou informações estão interligados e afetam uns aos outros.</label><br>
-                <input type="radio" name="pergunta10" value="d"><label> Explorar como as coisas funcionam internamente e como podem ser ajustadas.</label><br>
-                <input type="radio" name="pergunta10" value="e"><label> A chance de inovar e criar algo novo, aplicando minhas ideias de forma prática.</label><br>
+                <label class="label" for="pergunta10">Quando se trata de aprender algo novo, o que mais te motiva?</label><br>
+                <input type="radio" name="pergunta10" value="a" required><label>Saber que posso melhorar a forma como tarefas e processos são organizados.</label><br>
+                <input type="radio" name="pergunta10" value="b"><label>Poder resolver problemas reais com soluções práticas.</label><br>
+                <input type="radio" name="pergunta10" value="c"><label>Entender como sistemas ou informações estão interligados e afetam uns aos outros.</label><br>
+                <input type="radio" name="pergunta10" value="d"><label>Explorar como as coisas funcionam internamente e como podem ser ajustadas.</label><br>
+                <input type="radio" name="pergunta10" value="e"><label>A chance de inovar e criar algo novo, aplicando minhas ideias de forma prática.</label><br>
                 <button type="submit" class="submit-btn">Ver Resultado</button>
             </div>
         </form>
