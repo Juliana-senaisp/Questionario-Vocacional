@@ -10,6 +10,12 @@
             font-family: "mont";
             src: url(Montserrat-VariableFont_wght.ttf);
         }
+        body {
+            background-image: url(IMG_8058.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+        }
         * {
             font-family: "mont", sans-serif;
         }
@@ -17,7 +23,8 @@
             display: none;
             background-color: white;
             padding: 20px;
-            border-radius: 8px;
+            border-bottom-left-radius: 7px;
+            border-bottom-right-radius: 7px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
             margin-bottom: 20px;
         }
@@ -25,6 +32,8 @@
         .question-card.active {
             display: block;
             text-align: left;
+            border-bottom-left-radius: 7px;
+            border-bottom-right-radius: 7px;
         }
 
         .container {
@@ -38,9 +47,13 @@
             padding: 10px 20px;
             border: none;
             cursor: pointer;
-            border-bottom-left-radius: 7px;
-            border-bottom-right-radius: 7px;
+            border-radius: 7px;
+            transition: ease-in-out 0.3s;
             margin-top: 20px;
+        }
+
+        .next-btn:hover, .submit-btn:hover {
+            background-color: #c83129; 
         }
 
         .next-btn[disabled] {
@@ -81,7 +94,7 @@
                 <input type="radio" name="pergunta1" value="c"><label>Lidar com números e dados.<br>
                 <input type="radio" name="pergunta1" value="d"><label>Entender o funcionamento de objetos e como eles podem ser melhorados.<br>
                 <input type="radio" name="pergunta1" value="e"><label>Criar ou construir soluções a partir de ideias.<br>
-                <button type="button" class="next-btn" disabled>Avançar</button>
+                <button type="button" class="next-btn" disabled>Próximo</button>
             </div>
 
             <!-- Pergunta 2 -->
